@@ -31,6 +31,8 @@ const NavStyle = styled(Container_zineb)`
     justify-content:space-between;
     padding-top:1.5em;
     padding-bottom:1.5em;
+    /* position:absolute; */
+    
 `;
 const List = styled.ul`
     display: flex;
