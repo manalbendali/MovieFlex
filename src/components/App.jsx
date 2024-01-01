@@ -10,7 +10,6 @@ import Login from "../pages/Login"
 import Nav from "./Nav"
 import Home_page from "./Home_page"
 import SignUp from "../pages/signUp"
-import Movie_description from "./Movie_description"
 function App() {
   const location = useLocation();
 
@@ -18,20 +17,18 @@ function App() {
     <>
     <GlobalStyle />
     <>
-      <Nav />
-          <Routes location={location} key={location.pathname}>
-              <Route path="/" Component={Home_page}/>
-              <Route path="/login" Component={Login} />
-              <Route path="/signUp" Component={SignUp} />
-              <Route path="/profile" Component={Profile} />
-              <Route path="/movies" Component={WeeWeeklyMovies} />
-              <Route path="/description/:id" Component={Description} />
-              <Route path="/reservation/:id" Component={Reservation} />
-              {/* <Route path="/reservationCompleted/:id" Component={Reservation} /> */}
-              <Route path="/movie_page/:id"  Component={Movie_description} />
-          </Routes>
-
-      </>
+    <Nav />
+        <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home_page />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signUp" element={<SignUp />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/movies" element={<WeeWeeklyMovies />} />
+            <Route path="/description/:id" element={<Description />} />
+            <Route path="/reservation/:id" element={<Reservation />} />
+            <Route path="/reservationCompleted/:id" element={<Home_page />} />
+        </Routes>
+        </>
      
     </>
   )

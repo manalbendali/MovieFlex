@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
             background-position: center;
             background-size: cover;
             width: 400px;
-            /* height: auto; */
+            height: auto;
             margin: 15px;
             border-radius: 5px;
             /* padding: 15px 20px; */
@@ -64,10 +64,6 @@ const GlobalStyle = createGlobalStyle`
             text-decoration:none;
         }
     }
-    .red{
-        background-color:#770202;
-    }
-    
 `;
 
 export default GlobalStyle;

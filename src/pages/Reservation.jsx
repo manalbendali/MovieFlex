@@ -3,17 +3,11 @@ import styled from 'styled-components';
 import {fade, pageAnimation} from '../animation'
 import { motion } from 'framer-motion';
 import  "../style/profile_resrvation.css"
-import { Link, useLocation, useParams } from 'react-router-dom';
-import { data } from '../data/data';
+import { Link } from 'react-router-dom';
+
 
 const Reservation = () => {
-  const location = useLocation();
-  const url = location.pathname;
-
-  const { id } = useParams();
-  console.log(id)
-  const movie = data.filter(item=>item.id == id)[0];
-
+  
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [numReservations, setNumReservations] = useState(1);
@@ -101,11 +95,11 @@ const Reservation = () => {
       }
   };
 
-const seats = movie.placesSalle;
+
 const rows = 5; // Number of rows
-const seatsPerRow = seats / rows; // Number of seats per row
+const seatsPerRow = 12; // Number of seats per row
 // Assuming you have an array of occupied seats like this
-const occupiedSeats = movie.tableResere; // Replace this with your actual occupied seats data
+const occupiedSeats = [4, 5, 7, 10, 15, 19, 23, 28, 34, 37, 45, 48, 55, 60]; // Replace this with your actual occupied seats data
 
 const generateSeats = () => {
   const seatComponents = [];
@@ -134,9 +128,7 @@ const generateSeats = () => {
     return (
       <div className="profile_page">
       <StyledReservation variants={pageAnimation} initial="hidden" animate="show" exit="exit">
-        <H1 variants={fade}>Reservation for 
-        <span> {movie.name}</span>
-        </H1>
+        <H1 variants={fade}>Reservation for MovieName</H1>
         <StyledForm ref={formRef} onSubmit={handleSubmit}>
           <Label>
             First Name :
@@ -218,7 +210,7 @@ const generateSeats = () => {
             'You have not selected any seats.'
           )}
         </StyledPrice>
-        <Link to="/profile">
+        <Link to="/reservationCompleted/1">
           <StyledButton variants={fade} type="submit" onClick={handleSubmit}>
             Submit
           </StyledButton>
@@ -241,17 +233,10 @@ const StyledReservation = styled(motion.div)`
 const H1 = styled(motion.h1)`
   font-weight: lighter;
   font-size: 3rem;
-  width: 70%;
   text-align: center;
   font-family: 'Inter', sans-serif;
   margin-bottom: 20px;
   margin-top: 3rem;
-  span{
-    display:block;
-    font-weight:bold;
-    margin-top : 10px;
-    margin-bottom:10px;
-  }
   @media (max-width: 850px) {
     font-size: 30px;
     margin-bottom: 20px;
@@ -313,11 +298,11 @@ const StyledButton = styled(motion.button)`
   border-radius: 20px;
   margin-top: 15px;
   margin-bottom: 20px;
-  background: linear-gradient(to right, black, #770202);
+  background: linear-gradient(to right, black, red);
   color: white;
   cursor: pointer;
   @media (max-width: 850px) {
-    /* width: 25%; */
+    width: 25%;
   }
 `;
 
@@ -378,7 +363,7 @@ const StyledSeat = styled.div`
     border-top-right-radius: 8px;
   }
   &.selected {
-    background-color: #770202;
+    background-color: red;
   }
   &.occupied {
     background-color: #fff;
