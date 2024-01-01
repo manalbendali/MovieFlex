@@ -5,67 +5,88 @@ import MovieImage from '../assets/Cinema_Web_Site_Design2.jpg';
 import { motion } from 'framer-motion'
 import { photoAnim, fade, pageAnimation, scrollAnim} from '../animation'
 import  "../style/profile_resrvation.css"
+import { users } from '../data/users';
+import { data } from '../data/data';
 // import img from "../../images/Cinema_Web_Site_Design.jpg"
 const Profile = () => {
   // Placeholder user information
-  const userInfo = {
-    first_name: 'John',
-    last_name: 'Doe',
-    email: 'john.doe@example.com',
+  // const userInfo = {
+  //   first_name: 'John',
+  //   last_name: 'Doe',
+  //   email: 'john.doe@example.com',
+  // };
+
+  const userInfo = users[0];
+
+  // const resevations = userInfo.reservedMovies;
+  const reservedMovies = userInfo.reservedMovies;
+const movies = data.filter(item => reservedMovies.includes(item.id));
+
+console.log(movies);
+
+const reservations = userInfo.reservedMovies.map((element, i) => {
+  const reservedMovie = movies.find(movie => movie.id === element);
+
+  return {
+    id: i , // You might want to use a unique identifier for each reservation
+    movie_name: reservedMovie ? reservedMovie.name : '', // Assuming 'name' is the property you want
+    seats: userInfo.places[i],
+    total_price: userInfo.price[i++]
   };
+});
 
-
-  const reservations = [
-    {
-      id: 1,
-      movie_name: 'Movie 1',
-      seats: ['A1', 'A2'],
-      total_price: 20,
-    },
-    {
-      id: 2,
-      movie_name: 'Movie 2',
-      seats: ['B1', 'B2'],
-      total_price: 25,
-    },
-    {
-      id: 3,
-      movie_name: 'Movie 3',
-      seats: ['C1', 'C2'],
-      total_price: 35,
-    },
-    {
-      id: 4,
-      movie_name: 'Movie 4',
-      seats: ['D1', 'D2'],
-      total_price: 45,
-    },
-    {
-      id: 5,
-      movie_name: 'Movie 5',
-      seats: ['E1'],
-      total_price: 10,
-    },
-    {
-      id: 6,
-      movie_name: 'Movie 6',
-      seats: ['B4', 'B6', 'C3', 'C6', 'D10'],
-      total_price: 75,
-    },
-    {
-      id: 7,
-      movie_name: 'Movie 7',
-      seats: ['B10', 'B7', 'C3', 'C8'],
-      total_price: 85,
-    },
-  ];
+  console.log(reservations)
+  // const reservations = [
+  //   {
+  //     id: 1,
+  //     movie_name: 'Movie 1',
+  //     seats: ['A1', 'A2'],
+  //     total_price: 20,
+  //   },
+  //   {
+  //     id: 2,
+  //     movie_name: 'Movie 2',
+  //     seats: ['B1', 'B2'],
+  //     total_price: 25,
+  //   },
+  //   {
+  //     id: 3,
+  //     movie_name: 'Movie 3',
+  //     seats: ['C1', 'C2'],
+  //     total_price: 35,
+  //   },
+  //   {
+  //     id: 4,
+  //     movie_name: 'Movie 4',
+  //     seats: ['D1', 'D2'],
+  //     total_price: 45,
+  //   },
+  //   {
+  //     id: 5,
+  //     movie_name: 'Movie 5',
+  //     seats: ['E1'],
+  //     total_price: 10,
+  //   },
+  //   {
+  //     id: 6,
+  //     movie_name: 'Movie 6',
+  //     seats: ['B4', 'B6', 'C3', 'C6', 'D10'],
+  //     total_price: 75,
+  //   },
+  //   {
+  //     id: 7,
+  //     movie_name: 'Movie 7',
+  //     seats: ['B10', 'B7', 'C3', 'C8'],
+  //     total_price: 85,
+  //   },
+  // ];
 
   const [showReservations, setShowReservations] = useState(false);
   const [reservationWidth, setReservationWidth] = useState('100%');
 
   useEffect(() => {
     // Update the reservation width based on showReservations
-    setReservationWidth(showReservations ? '30%' : '100%');
+    setReservationWidth(showReservations ? '100%' : '100%');
   }, [showReservations]);
 
   return (
@@ -128,15 +149,17 @@ const StyledProfile = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   color: white;
+
 `;
 
 
 const Info = styled.div`
 display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: ${(props) => (props.hasReservations ? props.reservationWidth : '100%')}; /* Set width based on the prop, with a minimum width if no reservations */
+flex-direction: column;
+justify-content: center;
+align-items: center;
+/* width:80% !important; */
+  width: ${(props) => (props.hasReservations ? props.reservationWidth : '80%')}; //Set width based on the prop, with a minimum width if no reservations
   background-color: rgba(0, 0, 0, 0.7); 
   color: white;
   padding: 60px;
@@ -213,9 +236,32 @@ const StyledReservations = styled(motion.div)`
   margin-top: 10px;
   display : flex;
   flex-wrap:wrap;
-  overflow-x: auto;
   width: 80%; 
+  padding-bottom:20px;
   white-space: normal; 
+  overflow-x: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #a10101 lightgray; /* Firefox */
+
+  /* WebKit styles */
+  &::-webkit-scrollbar {
+    width: 12px;
+    /* border-radius:30px; */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: lightgray;
+    border-radius:30px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #a10101;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #a10101c0;
+  }
   ul {
     list-style: none;
     padding: 0;

@@ -2,26 +2,24 @@ import { useState } from "react"
 import { Container, Container_zineb } from "../style/style"
 import Carousel from "./Carousel"
 import {styled} from 'styled-components'
-import { movies } from "../data/movies";
-
+// import { movies } from "../data/movies";
+import { data } from "../data/data"
 
 const Categories = () =>{
-    const [selectedCategory, setSelectedCategory] = useState('action');
-    const moviesSelected = movies.filter(item=>item.category == selectedCategory);
-    // const filteredMovie = selectedCategory
-    //         ? movies.filter(item => item.category === selectedCategory)
-    //         : movies;
-    // console.log(filteredMovie);
+    const [selectedCategory, setSelectedCategory] = useState('Horror');
+    const moviesSelected = data.filter(item=> item.category.includes(selectedCategory) ==true );
+
    
     return(
         <Categorie>
             <h2>Our popular Categories</h2>
             <div className="cat">
                 <ul>
-                    <li onClick={() => setSelectedCategory('action')}>Action</li>
-                    <li onClick={() => setSelectedCategory('horror')}>Horror</li>
-                    <li onClick={() => setSelectedCategory('romance')}>Romance</li>
-                    <li onClick={() => setSelectedCategory('comedy')}>comedy</li>
+                    <li onClick={() => setSelectedCategory('Science Fiction')}>Science Fiction</li>
+                    <li onClick={() => setSelectedCategory('Action')}>Action</li>
+                    <li onClick={() => setSelectedCategory('Horror')}>Horror</li>
+                    <li onClick={() => setSelectedCategory('Mystery')}>Mystery</li>
+                    <li onClick={() => setSelectedCategory('Comedy')}>Comedy</li>
                 </ul>
             </div>
             <div className="movies">

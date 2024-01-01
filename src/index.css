@@ -15,7 +15,7 @@
 } */
 
 .profile_page{
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/Cinema_Web_Site_Design.jpg') center/cover no-repeat fixed;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.864), rgba(0, 0, 0, 0.792)), url('./assets/Cinema_Web_Site_Design.jpg') center/cover no-repeat fixed;
   display: flex;
   flex-direction: column;
   color: white;
