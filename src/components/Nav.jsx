@@ -13,6 +13,7 @@ const Nav = () =>{
                     <li><Link to="/profile">Profile</Link></li>
                     {/* <li><Link to="/reservation">Reservation</Link></li> */}
                     {/* <li><Link to="/description">Description</Link></li> */}
+                    <li><Link to="/movies">Movies</Link></li>
                     <li><Link to="/login">login</Link></li>
                     <li><Link to="/signUp">signUp</Link></li>
                     

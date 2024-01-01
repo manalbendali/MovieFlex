@@ -22,6 +22,9 @@
     align-items: center;
     justify-content: space-between;
 }
+.principale-persona{
+    min-height: 100vh !important;
+}
  .principale-persona .Title-for-mainCharacter{
     display: flex;
     align-items: center;
