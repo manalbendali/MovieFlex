@@ -8,8 +8,10 @@ const Header = () =>{
         <>
             <HeaderStyle>
                 <Content>
-                    <h1>Lorem ipsum sit</h1>
-                    <p>Lorem ipsum dolor sit. Vero eligendi temporibus voluptatum necessitatibus nobis eaque rerum facere? Ullam rerum quidem, nemo culpa laboriosam nostrum reprehenderit eum voluptatibus ipsa, voluptas eligendi.</p>
+                    <h1> Your Instant Cinematic Escape</h1>
+                    <p>
+                    Experience the ultimate convenience in securing your favorite cinema seats with CineReserve. Effortlessly book your movie tickets online, choose the best seats in the house, and elevate your cinematic journey. Skip the lines, savor the anticipation, and make every movie night a CineReserve experience to remember
+                    </p>
                     <a href="#movies">
                         <button className="reserve">Reserve now</button>
                     </a>

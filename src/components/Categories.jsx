@@ -1,10 +1,20 @@
-import { useState } from "react"
+import React, { useEffect, useState } from 'react';
 import { Container, Container_zineb } from "../style/style"
 import Carousel from "./Carousel"
 import {styled} from 'styled-components'
 import { movies } from "../data/movies";
+import axios from 'axios';
 
-
+// useEffect(() => {
+//     axios.get('http://127.0.0.1:8000/api/filmSuggestion/')
+//       .then(response => {
+//         setData(response.data);
+//       })
+//       .catch(error => {
+//         console.error('Error fetching data:', error);
+//       });
+//   }, []);
+  
 const Categories = () =>{
     const [selectedCategory, setSelectedCategory] = useState('action');
     const moviesSelected = movies.filter(item=>item.category == selectedCategory);
