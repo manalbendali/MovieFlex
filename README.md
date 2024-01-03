@@ -1,7 +1,9 @@
 # Cinema Reservation Project
 ## Overview
 This project is a web application for cinema reservations. It consists of a Laravel API backend and a React frontend.
-## Repo for laravle 
+
+## Repo for laravel API 
+the api rep : https://github.com/manalbendali/ux_project
 
 ## Features
 
