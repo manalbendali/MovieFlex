@@ -23,6 +23,7 @@ the api rep : https://github.com/manalbendali/ux_project
 ![Screenshot 2024-01-03 at 19-12-05 Vite React](https://github.com/DesignToWebsite/Projet_web/assets/74991230/dc1b8cac-c4e1-41a9-aece-6675c1464fbc)
 ![Screenshot 2024-01-03 at 19-11-41 Vite React](https://github.com/DesignToWebsite/Projet_web/assets/74991230/c2ea2775-eed8-4d88-82b7-fcbd808ef243)
 ![Screenshot 2024-01-03 at 19-11-30 Vite React](https://github.com/DesignToWebsite/Projet_web/assets/74991230/7bf4caeb-b381-41b9-a198-13dc2c6967c2)
-![Screenshot 2024-01-03 at 19-11-41 Vite React](https://github.com/DesignToWebsite/Projet_web/assets/74991230/f37377d7-8cf5-437a-ba1d-7c9d49a827b8)
-![Screenshot 2024-01-03 at 19-11-49 Vite React](https://github.com/DesignToWebsite/Projet_web/assets/74991230/b861cd01-a3a4-4673-9f3e-b8b5cebbfdd7)
-![Screenshot 2024-01-03 at 19-12-44 Vite React](https://github.com/DesignToWebsite/Projet_web/assets/74991230/e9b3aca2-3848-4a93-9c7a-80d01a978c7b)
+![capture11](https://github.com/DesignToWebsite/Projet_web/assets/132018368/27c504f9-67ae-48c5-a93d-a7df153f8755)
+![Capture12](https://github.com/DesignToWebsite/Projet_web/assets/132018368/0f78de0a-6d43-4adc-bef9-71018960efd4)
+![Capture13](https://github.com/DesignToWebsite/Projet_web/assets/132018368/ef2085ff-f4d3-4f6d-8907-e981a6a72ad2)
+
