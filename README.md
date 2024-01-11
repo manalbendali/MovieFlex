@@ -13,7 +13,7 @@ the api rep : https://github.com/manalbendali/ux_project
 
 ## Technologies Used
 **Backend:** Laravel API
-**Frontend:** React
+**Frontend:** React , Bootstrap
 **Database:** MySQL
 **State Management:** Redux
 
