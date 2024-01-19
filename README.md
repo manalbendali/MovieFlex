@@ -1,4 +1,5 @@
 # Cinema Reservation Project
+
 ## Overview
 This project is a web application for cinema reservations. It consists of a Laravel API backend and a React frontend.
 
